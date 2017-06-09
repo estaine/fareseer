@@ -35,12 +35,12 @@ public class WizzAirRequest extends Request {
     }
 
     @Data
-    public class FlightList {
+    private class FlightList {
         private String departureStation;
         private String arrivalStation;
         private String departureDate;
 
-        public FlightList(SimpleRequest request) {
+        private FlightList(SimpleRequest request) {
             this.departureStation = request.getFromAirportCode();
             this.arrivalStation = request.getToAirportCode();
             this.departureDate = request.getDate();
