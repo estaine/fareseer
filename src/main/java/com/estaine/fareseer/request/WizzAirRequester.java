@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class WizzAirRequester extends Requester<WizzAirRequest, WizzAirResponse> {
-    private static final String URL = "https://be.wizzair.com/5.1.4/Api/search/search";
+    private static final String URL = "https://be.wizzair.com/5.3.0/Api/search/search";
 
     @Override
     public Set<SimpleResponse> sendRequest(SimpleRequest request) throws IOException {
