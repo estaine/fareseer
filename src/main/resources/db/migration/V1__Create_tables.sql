@@ -1,12 +1,12 @@
 create table airline (
-    id bigint not null,
+    id bigint not null auto_increment,
     name varchar(255) not null,
     iata_code char(2) not null,
     primary key(id)
 );
 
 create table airport (
-    id bigint not null,
+    id bigint not null auto_increment,
     iata_code char(3) not null,
     name varchar(255) not null,
     alias varchar(255),
@@ -17,14 +17,14 @@ create table airport (
 );
 
 create table currency (
-    id bigint not null,
+    id bigint not null auto_increment,
     iso_code char(3) not null,
     name varchar(255) not null,
     primary key(id)
 );
 
 create table flight (
-    id bigint not null,
+    id bigint not null auto_increment,
     airport_from_id bigint not null,
     airport_to_id bigint not null,
     airline_id bigint not null,
@@ -39,6 +39,3 @@ create table flight (
     foreign key(airline_id) references airline(id),
     foreign key(currency_id) references currency(id)
 );
-
-
-
