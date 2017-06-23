@@ -2,7 +2,8 @@ create table airline (
     id bigint not null auto_increment,
     name varchar(255) not null,
     iata_code char(2) not null,
-    primary key(id)
+    primary key(id),
+    unique(iata_code)
 );
 
 create table airport (
@@ -12,7 +13,8 @@ create table airport (
     city varchar(255) not null,
     country varchar(255) not null,
     timezone varchar(255) not null,
-    primary key(id)
+    primary key(id),
+    unique(iata_code)
 );
 
 create table airport_alias (
@@ -27,7 +29,8 @@ create table currency (
     id bigint not null auto_increment,
     iso_code char(3) not null,
     name varchar(255) not null,
-    primary key(id)
+    primary key(id),
+    unique(iso_code)
 );
 
 create table flight (
