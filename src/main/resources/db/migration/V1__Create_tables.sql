@@ -9,11 +9,18 @@ create table airport (
     id bigint not null auto_increment,
     iata_code char(3) not null,
     name varchar(255) not null,
-    alias varchar(255),
-    city varchar(255),
-    country varchar(255),
-    timezone varchar(255),
+    city varchar(255) not null,
+    country varchar(255) not null,
+    timezone varchar(255) not null,
     primary key(id)
+);
+
+create table airport_alias (
+    id bigint not null auto_increment,
+    alias varchar(255) not null,
+    airport_id bigint not null,
+    primary key(id),
+    foreign key(airport_id) references airport(id)
 );
 
 create table currency (
