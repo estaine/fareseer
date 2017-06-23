@@ -46,3 +46,14 @@ create table flight (
     foreign key(airline_id) references airline(id),
     foreign key(currency_id) references currency(id)
 );
+
+create table connection (
+    id bigint not null auto_increment,
+    airline_id bigint not null,
+    first_airport_id bigint not null,
+    second_airport_id bigint not null,
+    primary key(id),
+    foreign key(airline_id) references airline(id),
+    foreign key(first_airport_id) references airport(id),
+    foreign key(second_airport_id) references airport(id)
+);
